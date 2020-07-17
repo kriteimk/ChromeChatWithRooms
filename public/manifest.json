@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  
+  "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+   },
+
+  "name": "url-chat",
+  "description": "Here you can talk to other people that are seeing the same URL that you are now",
+  "version": "1.0",
+
+  "page_action": {
+    "default_icon": "/img/chat_small.png",
+    "default_popup": "/index.html",
+    "default_title": "Click to open this URL's chat"
+  },
+  
+    "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["contentscript.js"]
+    }
+  ],
+   "web_accessible_resources": ["index.html"],
+
+  "permissions": [
+    "activeTab",
+    "storage",
+	"declarativeContent",
+	"tabs"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "url-chat",
+  "version": "0.0.1",
+  "description": "Chat with people in the same URL",
+  "dependencies": {
+    "mongodb": "^2.2.36",
+    "socket.io": "^1.7.3"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "main": "index.js",
+  "author": "Willian Roque"
+}
