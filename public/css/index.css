@@ -46,6 +46,15 @@ button {
     }
 }
 
+#videos-container{
+   width:100%; /* or whatever width you want. */
+   height:250px;
+   max-height:250px;
+   display: inline-block;
+   margin-left:auto; 
+   margin-right:0;
+}
+
 #room-stats {
     position: fixed;
     top: 0;

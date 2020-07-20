@@ -16,7 +16,7 @@ chrome.runtime.onMessage.addListener(
   button.style.bottom = "1%";
   button.style.width = "5%";
   button.style.height = "5%";
-  button.style.zIndex = "2";
+  button.style.zIndex = "20000";
 
 // 2. Append somewhere
   var body = document.getElementsByTagName("body")[0];
@@ -32,9 +32,10 @@ chrome.runtime.onMessage.addListener(
   iFrame.style.bottom = "6%";
   iFrame.style.width = "20%";
   iFrame.style.height = "45%";
-  iFrame.style.zIndex = "2";
+  iFrame.style.zIndex = "20000";
   iFrame.setAttribute("scrolling", "no");
   iFrame.setAttribute("hidden", "");
+  iFrame.setAttribute("allow", "camera,microphone");
   
   
   document.body.insertBefore (iFrame, document.body.nextSibling);

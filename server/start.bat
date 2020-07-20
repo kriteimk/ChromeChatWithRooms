@@ -1,7 +1,7 @@
 @echo off
 echo.
 
-set NodePackagesPath=D:\Download\url-chat-master\url-chat-master\server // This is my path, you can edit them
+set NodePackagesPath=D:\Download\url-chat-master\url-chat-master\test\server // This is my path, you can edit them
 
 set Path=%NodePackagesPath%\node_modules\.bin;%PATH%
 set Path=%NodePackagesPath%;%PATH%

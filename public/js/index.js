@@ -1,4 +1,4 @@
-const socketIO = io('http://localhost:3000/');
+const socketIO = io('https://localhost:3000');
 var user = { id: '', name: '' };
 var roomJoined;
 chrome.storage.sync.get('roomJoined', function(data) { 
@@ -11,6 +11,13 @@ chrome.storage.sync.get('roomJoined', function(data) {
 var lastSenderId;
 var oldestMessageTimestamp;
 var isTyping = false;
+
+var constraints = {
+    audio: true,
+    video: true
+};
+
+navigator.mediaDevices.getUserMedia(constraints);
 
 /**
  * Joins the chat room of the URL of the current tab.

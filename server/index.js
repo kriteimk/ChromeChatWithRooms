@@ -1,5 +1,16 @@
-var httpServer = require('http').createServer();
-var io = require('socket.io')(httpServer);
+//var httpServer = require('http').createServer();
+//var io = require('socket.io')(httpServer);
+var fs = require( 'fs' );
+var app = require('express')();
+var https = require('https');
+var server = https.createServer({
+    key: fs.readFileSync('./certs/key.pem'),
+    cert: fs.readFileSync('./certs/cert.pem')
+},app);
+
+var io = require('socket.io').listen(server);
+
+const RTCMultiConnectionServer = require('rtcmulticonnection-server');
 
 var mongo = require('./mongodb.js');
 var chat = require('./chat.js');
@@ -10,10 +21,13 @@ var user = require('./user.js');
  * The SocketIO methods used for the communication with the client.
  */
 io.on('connection', (socket) => {
-
     /**
      * Generates an id to a new user.
      */
+	 
+	console.log("1");
+	RTCMultiConnectionServer.addSocket(socket);
+	 
     socket.on('generateUserId', (callback) => {
         user.generateUserId(callback);
     });
@@ -79,5 +93,6 @@ mongo.init((err) => {
         throw err;
     }
 
-    httpServer.listen(3000, () => console.log('url-chat running on port ' + 3000))
+    //httpServer.listen(3000, () => console.log('url-chat running on port ' + 3000))
+	server.listen(3000, () => console.log('url-chat running on port ' + 3000))
 });
