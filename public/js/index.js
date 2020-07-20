@@ -61,6 +61,7 @@ socketIO.on('roomID', (data) => {
   addMessage(data, 'System', Date.now());
   roomJoined = data;
   chrome.storage.sync.set({'roomJoined': data});
+  connection.openOrJoin(roomJoined);
 });
 
 /**

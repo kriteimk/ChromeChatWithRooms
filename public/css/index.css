@@ -6,12 +6,11 @@
 }
 
 body {
-    min-width: 500px;
-    min-height: 500px;
+    min-width: fit-content;
+    min-height: fit-content;
     width: 100%;
     height: 100%;
-    background-image: url('../img/default-background.jpg');
-    background-position: center;
+    
 }
 
 button {
@@ -19,6 +18,23 @@ button {
     background: 0 0;
     outline: none;
     cursor: pointer;
+}
+
+.row {
+	display:flex;
+	height: 100vh;
+}
+
+.video{
+	flex:0 1 20%;
+}
+
+.chat {
+	flex:1;
+	background-image: url('../img/default-background.jpg');
+	background-position: center;
+	background-size: cover;
+	min-height: 0;
 }
 
 .no-wrap {
@@ -47,12 +63,9 @@ button {
 }
 
 #videos-container{
-   width:100%; /* or whatever width you want. */
-   height:250px;
-   max-height:250px;
-   display: inline-block;
-   margin-left:auto; 
-   margin-right:0;
+	height:100%;
+	width:100%;
+	overflow:scroll;
 }
 
 #room-stats {
@@ -84,7 +97,7 @@ button {
 
 #room-users-counter {
     width: 50%;
-    float: right;
+    align-self: flex-end;
 }
 
 #messages {
@@ -98,7 +111,7 @@ button {
 
 #messages li {
     display: inline-block;
-    width: 100%;
+    width: 80%;
     margin-top: 5px;
 }
 
@@ -142,7 +155,7 @@ button {
 
 #users-typing-wrapper {
     position: fixed;
-    width: 100%;
+    width: 80%;
     bottom: 45px;
     margin-left: 10px;
     color: white;
@@ -165,7 +178,7 @@ button {
 #message-input-wrapper {
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 80%;
     height: 40px;
     background-color: #f5f1ee;
     box-shadow: 0 -1px 20px 0 rgba(0, 0, 0, 0.2);
@@ -203,7 +216,7 @@ button {
 
 #name-input-wrapper {
     position: absolute;
-    width: 100%;
+    width: 80%;
     height: 100%;
     background-color: rgba(100, 100, 100, 0.4);
 }
@@ -221,7 +234,7 @@ button {
 #name-input {
     position: absolute;
     top: calc(50% - 40px);
-    left: calc(50% - 140px);
+    left: calc(40% - 140px);
     width: 240px;
     height: 40px;
     padding: 5px;
@@ -237,7 +250,7 @@ button {
     position: absolute;
     display: inline-block;
     top: calc(50% - 40px);
-    left: calc(50% + 105px);
+    left: calc(40% + 105px);
     width: 45px;
     height: 40px;
     background-color: lightseagreen;
@@ -252,8 +265,8 @@ button {
 
 #name-input-messge {
     position: absolute;
-    top: calc(50% + 5px);
-    left: calc(50% - 140px);
+    top: calc(40% + 5px);
+    left: calc(40% - 140px);
     height: 20px;
     font-weight: bold;
     color: white;
@@ -261,7 +274,7 @@ button {
 
 #roomID-input-wrapper {
     position: absolute;
-    width: 100%;
+    width: 80%;
     height: 100%;
     background-color: rgba(100, 100, 100, 0.4);
 }
@@ -279,7 +292,7 @@ button {
 #roomID-input {
     position: absolute;
     top: calc(50% - 40px);
-    left: calc(45% - 140px);
+    left: calc(36% - 140px);
     width: 240px;
     height: 40px;
     padding: 5px;
@@ -295,7 +308,7 @@ button {
     position: absolute;
     display: inline-block;
     top: calc(50% - 40px);
-    left: calc(45% + 105px);
+    left: calc(36% + 105px);
     width: 45px;
     height: 40px;
     background-color: lightseagreen;
@@ -308,7 +321,7 @@ button {
     position: absolute;
     display: inline-block;
     top: calc(50% - 40px);
-    left: calc(45% + 155px);
+    left: calc(36% + 155px);
     width: 70px;
     height: 40px;
     background-color: lightseagreen;
@@ -324,7 +337,7 @@ button {
 #roomID-input-messge {
     position: absolute;
     top: calc(50% + 5px);
-    left: calc(45% - 140px);
+    left: calc(36% - 140px);
     height: 20px;
     font-weight: bold;
     color: white;

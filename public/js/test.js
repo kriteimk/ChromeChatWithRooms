@@ -19,5 +19,3 @@ connection.session = {
 };
 
 connection.videosContainer = document.getElementById('videos-container');
-
-connection.openOrJoin('your-room-ids');

@@ -2180,7 +2180,7 @@ var RTCMultiConnection = function(roomid, forceOptions) {
         mediaElement.setAttribute('controls', false);
         mediaElement.setAttribute('muted', false);
         mediaElement.setAttribute('volume', 1);
-		mediaElement.style.height = '100px';
+		mediaElement.style.width = '100%';
 
         // http://goo.gl/WZ5nFl
         // Firefox don't yet support onended for any stream (remote/local)
